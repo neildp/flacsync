@@ -52,7 +52,7 @@ class SyncWorker(threading.Thread):
             self.dbg = "-> %s: %s\n" %(self.name, self.flac);
             
             # check hash
-            x = os.popen("md5sum \"%s\"" %(flac_esc));
+            x = os.popen("md5 -r \"%s\"" %(flac_esc));
             digest = x.read().split(' ')[0];
             x.close();
 
